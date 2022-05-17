@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">烛火</string>
+    <string name="welcome">欢迎使用本产品，请使用员工编号登录</string>
+    <string name="hello">Hello</string>
+    <string name="remember">记住账号密码</string>
+    <string name="hint_password">请输入您的登录密码</string>
+    <string name="password">登录密码</string>
+    <string name="hint_staff_code">请输入您的员工编号</string>
+    <string name="staff_code">员工编号</string>
+    <string name="company">湖南烛火信息科技有限公司</string>
+    <string name="login">登录</string>
+    <string name="home_page">首页</string>
+    <string name="achievement">业绩</string>
+    <string name="mine">我的</string>
+    <string name="floor">楼层</string>
+    <string name="bed">床位</string>
+    <string name="default_des">contentDescription</string>
+    <string name="state">状态</string>
+    <string name="type">类型</string>
+    <string name="area">区域</string>
+    <string name="roomType">%s(%s)</string>
+    <string name="technicianType">%s(%s)</string>
+    <string name="wait">等%s\'</string>
+    <string name="s1">%s/%s</string>
+    <string name="s2">%s%s\'</string>
+    <string name="money">¥%s</string>
+    <string name="duration">%s\'</string>
+
+    <string name="orderTime">下单: %s</string>
+    <string name="startTime">起钟: %s</string>
+    <string name="count">x%s</string>
+
+    <string name="technicianInfo">%s(%s)-%s</string>
+    <string name="minute">%s分</string>
+    <string name="roomCode">房间:%s</string>
+    <string name="technicianCode">技师:%s</string>
+    <string name="item">项目:%s</string>
+    <string name="str3">轮次:%s/%s</string>
+</resources>

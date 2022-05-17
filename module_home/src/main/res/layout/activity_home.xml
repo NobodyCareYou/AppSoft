@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f3f3f3"
+        tools:context=".ui.HomeActivity">
+
+        <FrameLayout
+            android:id="@+id/fl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/rg_guide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rg_guide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:textColor="@color/sc_home"
+                android:checked="true"
+                android:id="@+id/home"
+                style="@style/HomeRadioButtonStyle"
+                android:drawableTop="@drawable/sc_home_page"
+                android:text="@string/home_page" />
+
+            <RadioButton
+                android:textColor="@color/sc_home"
+                android:id="@+id/achievement"
+                style="@style/HomeRadioButtonStyle"
+                android:drawableTop="@drawable/sc_achievement"
+                android:text="@string/achievement" />
+
+            <RadioButton
+                android:textColor="@color/sc_home"
+                android:id="@+id/mine"
+                style="@style/HomeRadioButtonStyle"
+                android:drawableTop="@drawable/sc_mine"
+                android:text="@string/mine" />
+
+        </RadioGroup>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

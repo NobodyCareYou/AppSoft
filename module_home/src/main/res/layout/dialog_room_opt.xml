@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.helper.widget.Layer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_white_conner8dp"
+            app:constraint_referenced_ids="openRoom,order,appointment,repair,clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/openRoom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/quickly_openroom"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="开房"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/order"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/roomoperation_xiadan"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="下单"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/openRoom"
+            app:layout_constraintEnd_toStartOf="@id/appointment"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/openRoom"
+            app:layout_constraintTop_toTopOf="@id/openRoom" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/appointment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/roomoperation_xiadan"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="预约"
+            android:textColor="@color/black"
+            app:layout_constraintBaseline_toBaselineOf="@id/openRoom"
+            app:layout_constraintBottom_toBottomOf="@id/openRoom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/order"
+            app:layout_constraintTop_toTopOf="@id/openRoom" />
+
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/repair"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:drawableTop="@drawable/repair"
+            android:gravity="center"
+            android:paddingBottom="30dp"
+            android:text="维修房"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/clear"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/openRoom" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/clean_room"
+            android:gravity="center"
+            android:paddingBottom="30dp"
+            android:text="清房"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/repair"
+            app:layout_constraintEnd_toStartOf="@id/empty"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/repair"
+            app:layout_constraintTop_toTopOf="@id/repair" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/empty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="30dp"
+            android:text="111"
+            android:textColor="@color/black"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/repair"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/clear"
+            app:layout_constraintTop_toTopOf="@id/repair" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/empty" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

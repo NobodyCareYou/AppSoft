@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="subBlack">#D9000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#3e3bee</color>
+    <color name="green">#68D896</color>
+    <color name="bg_grey">#F8F8F8</color>
+    <color name="grey">#F3f3f3</color>
+    <color name="red">#E80606</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="black_50">#2E2E2E</color>
+    <color name="subWhite">#C8FFFFFF</color>
+
+
+
+    <color name="colorRoomState8">#23dc90</color>
+    <color name="colorRoomState7">#16a1d0</color>
+    <color name="colorRoomState6">#fe6869</color>
+    <color name="colorRoomState5">#acb3c6</color>
+    <color name="colorRoomState4">#6688fe</color>
+    <color name="colorRoomState3">#fcac32</color>
+    <color name="colorRoomState2">#8d64f7</color>
+    <color name="colorRoomState1">#fff</color>
+
+
+    <color name="colorTechnicianState7">#8563f9</color>
+    <color name="colorTechnicianState6">#fe6869</color>
+    <color name="colorTechnicianState5">#acb3c6</color>
+    <color name="colorTechnicianState4">#fcac32</color>
+    <color name="colorTechnicianState3">#6688fe</color>
+    <color name="colorTechnicianState2">#23dc90</color>
+    <color name="colorTechnicianState1">#287E7B7B</color>
+
+
+
+</resources>

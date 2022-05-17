@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UseCompatTextViewDrawableXml">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <import type="soft.zhuhuo.lib.constant.RoomState" />
+
+        <import type="soft.zhuhuo.lib.R" />
+
+        <variable
+            name="data"
+            type="soft.zhuhuo.lib.bean.RoomTechnicianInfo.RoomInfoDTO" />
+
+        <variable
+            name="firstCode"
+            type="String" />
+
+        <variable
+            name="secondCode"
+            type="String" />
+
+        <variable
+            name="thirdCode"
+            type="String" />
+
+        <variable
+            name="firstState"
+            type="String" />
+
+        <variable
+            name="secondState"
+            type="String" />
+
+        <variable
+            name="thirdState"
+            type="String" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="6dp">
+
+        <TextView
+            android:id="@+id/room_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.roomCode}"
+            android:textColor='@{TextUtils.equals("1",data.stateID) ? @color/black : @color/white }'
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/room_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{RoomState.getName(data.stateID)}"
+            android:textColor='@{TextUtils.equals("1",data.stateID) ? @color/black_50 : @color/white }'
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/room_code" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{@string/money(TextUtils.isEmpty(data.consumMoney) ? "0" : data.consumMoney)}'
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/room_code"
+            app:layout_constraintEnd_toStartOf="@id/technician_num"
+            app:layout_constraintStart_toEndOf="@id/room_code" />
+
+        <TextView
+            android:id="@+id/technician_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text='@{@string/s1(TextUtils.isEmpty(data.SendNum)?"0":data.SendNum,TextUtils.isEmpty(data.BedCount) ? "0" :data.BedCount)}'
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/room_code"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/less_technician"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_white_unselected"
+            android:paddingStart="4dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="2dp"
+            android:text="@string/less"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility='@{TextUtils.isEmpty(data.noTecNum)? View.GONE : Integer.parseInt(data.noTecNum) > 0 ? View.VISIBLE : View.GONE}'
+            app:layout_constraintBaseline_toBaselineOf="@id/room_state"
+            app:layout_constraintEnd_toStartOf="@id/union_room"
+            app:layout_constraintTop_toBottomOf="@id/technician_num" />
+
+
+        <TextView
+            android:id="@+id/union_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_unselected"
+            android:paddingStart="4dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="2dp"
+            android:text="@string/union"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility='@{data.linked.equals("1")  ? View.VISIBLE : View.GONE}'
+            app:layout_constraintBaseline_toBaselineOf="@id/room_state"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/technician_num" />
+
+
+        <TextView
+            android:id="@+id/firstCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawableStart='@{TextUtils.equals("1",data.stateID) ? @drawable/person_grey : @drawable/person_white}'
+            android:drawableLeft='@{TextUtils.equals("1",data.stateID) ? @drawable/person_grey : @drawable/person_white}'
+            android:text='@{firstCode}'
+            android:textColor='@{TextUtils.equals("1",data.stateID) ? @color/black_50 : @color/white }'
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/room_state" />
+
+        <TextView
+            android:id="@+id/firstState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart='@{TextUtils.equals("1",data.stateID) ? @drawable/clock_grey : @drawable/clock_white}'
+            android:drawableLeft='@{TextUtils.equals("1",data.stateID) ? @drawable/clock_grey : @drawable/clock_white}'
+            android:text="@{firstState}"
+            android:textColor='@{TextUtils.equals("1",data.stateID) ? @color/black_50 : @color/white }'
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/firstCode"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/secondCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawableStart='@{TextUtils.equals("1",data.stateID) ? @drawable/person_grey : @drawable/person_white}'
+            android:drawableLeft='@{TextUtils.equals("1",data.stateID) ? @drawable/person_grey : @drawable/person_white}'
+            android:text="@{secondCode}"
+            android:textColor='@{TextUtils.equals("1",data.stateID) ? @color/black_50 : @color/white }'
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstCode" />
+
+        <TextView
+            android:id="@+id/secondState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart='@{TextUtils.equals("1",data.stateID) ? @drawable/clock_grey : @drawable/clock_white}'
+            android:drawableLeft='@{TextUtils.equals("1",data.stateID) ? @drawable/clock_grey : @drawable/clock_white}'
+            android:text="@{secondState}"
+            android:textColor='@{TextUtils.equals("1",data.stateID) ? @color/black_50 : @color/white }'
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/secondCode"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/thirdCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawableStart='@{TextUtils.equals("1",data.stateID) ? @drawable/person_grey : @drawable/person_white}'
+            android:drawableLeft='@{TextUtils.equals("1",data.stateID) ? @drawable/person_grey : @drawable/person_white}'
+            android:text="@{thirdCode}"
+            android:textColor='@{TextUtils.equals("1",data.stateID) ? @color/black_50 : @color/white }'
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/secondCode" />
+
+        <TextView
+            android:id="@+id/thirdState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart='@{TextUtils.equals("1",data.stateID) ? @drawable/clock_grey : @drawable/clock_white}'
+            android:drawableLeft='@{TextUtils.equals("1",data.stateID) ? @drawable/clock_grey : @drawable/clock_white}'
+            android:text="@{thirdState}"
+            android:textColor='@{TextUtils.equals("1",data.stateID) ? @color/black_50 : @color/white }'
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/thirdCode"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

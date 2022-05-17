@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f3f3f3">
+
+
+        <androidx.constraintlayout.helper.widget.Layer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            app:constraint_referenced_ids="name,role,room,technician_num,code"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.constraintlayout.helper.widget.Layer>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="5dp"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:drawableStartCompat="@drawable/position_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:drawableStartCompat="@drawable/people_white"
+            app:layout_constraintBaseline_toBaselineOf="@id/name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/technician_num"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+        <TextView
+            android:id="@+id/technician_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/room"
+            app:layout_constraintBottom_toBottomOf="@id/room"
+            app:layout_constraintEnd_toStartOf="@id/code"
+            app:layout_constraintStart_toEndOf="@id/room" />
+
+        <TextView
+            android:id="@+id/code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/room"
+            app:layout_constraintBottom_toBottomOf="@id/room"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/technician_num" />
+
+        <androidx.constraintlayout.helper.widget.Layer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_technician"
+            app:constraint_referenced_ids="technician,et_technician_code,split"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/room" />
+
+
+        <TextView
+            android:id="@+id/technician"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:drawablePadding="5dp"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="技师"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            app:drawableEndCompat="@drawable/arrow_blue"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_technician_code"
+            app:layout_constraintStart_toStartOf="@id/room"
+            app:layout_constraintTop_toBottomOf="@id/room" />
+
+        <TextView
+
+            android:id="@+id/split"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="|"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_technician_code"
+            app:layout_constraintStart_toEndOf="@id/technician"
+            app:layout_constraintTop_toBottomOf="@id/room" />
+
+        <EditText
+            android:id="@+id/et_technician_code"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:hint="请输入要查找的技师编号"
+            android:textColor="@color/subBlack"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/search_technician"
+            app:layout_constraintStart_toEndOf="@id/split"
+            app:layout_constraintTop_toBottomOf="@id/room" />
+
+        <TextView
+            android:id="@+id/search_technician"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="搜素"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_technician_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/room" />
+
+        <androidx.constraintlayout.helper.widget.Layer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_quickly"
+            app:constraint_referenced_ids="open_room,technician_state,point_state,payment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_technician_code" />
+
+
+        <TextView
+            android:id="@+id/open_room"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:drawableTop="@drawable/quickly_openroom"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="立即开房"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/technician_state"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_technician_code" />
+
+        <TextView
+            android:id="@+id/technician_state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/technician_state"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="技师状态"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/open_room"
+            app:layout_constraintEnd_toStartOf="@id/point_state"
+            app:layout_constraintStart_toEndOf="@id/open_room" />
+
+        <TextView
+            android:id="@+id/point_state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/up_point"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="上点状态"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/open_room"
+            app:layout_constraintEnd_toStartOf="@id/payment"
+            app:layout_constraintStart_toEndOf="@id/technician_state" />
+
+        <TextView
+            android:id="@+id/payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:drawableTop="@drawable/payment"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="收银结账"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/open_room"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/point_state" />
+
+        <androidx.constraintlayout.helper.widget.Layer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_quickly"
+            app:constraint_referenced_ids="org_manage,appointment_manage,member_manage,clock_manage,staff_manage,attendance_manage,room_state,current_state,service_notice,additional_service,operation_manage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/open_room" />
+
+
+        <TextView
+            android:id="@+id/org_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:text="门店管理"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/open_room" />
+
+        <TextView
+            android:id="@+id/appointment_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="预约管理"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/appointment_manage"
+            app:layout_constraintEnd_toStartOf="@id/member_manage"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/org_manage" />
+
+        <TextView
+            android:id="@+id/member_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:text="会员管理"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/member_manage"
+            app:layout_constraintBaseline_toBaselineOf="@id/appointment_manage"
+            app:layout_constraintEnd_toStartOf="@id/clock_manage"
+            app:layout_constraintStart_toEndOf="@id/appointment_manage" />
+
+        <TextView
+            android:id="@+id/clock_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="钟房管理"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/clock_manage"
+            app:layout_constraintBaseline_toBaselineOf="@id/appointment_manage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/member_manage" />
+
+        <TextView
+            android:id="@+id/staff_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="员工管理"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/staff_manage"
+            app:layout_constraintEnd_toStartOf="@id/attendance_manage"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appointment_manage" />
+
+        <TextView
+            android:id="@+id/attendance_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:text="考勤管理"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/attendance_manage"
+            app:layout_constraintBaseline_toBaselineOf="@id/staff_manage"
+            app:layout_constraintEnd_toStartOf="@id/room_state"
+            app:layout_constraintStart_toEndOf="@id/staff_manage" />
+
+        <TextView
+            android:id="@+id/room_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="房间动态"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/room_state"
+            app:layout_constraintBaseline_toBaselineOf="@id/staff_manage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/attendance_manage" />
+
+        <TextView
+            android:id="@+id/current_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="实时动态"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/staff_manage" />
+
+
+        <TextView
+            android:id="@+id/service_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:text="服务通知"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/service_notice"
+            app:layout_constraintEnd_toStartOf="@id/additional_service"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current_state" />
+
+        <TextView
+
+            android:id="@+id/additional_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:text="附项通知"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/addition_notice"
+            app:layout_constraintBaseline_toBaselineOf="@id/service_notice"
+            app:layout_constraintEnd_toStartOf="@id/operation_manage"
+            app:layout_constraintStart_toEndOf="@id/service_notice" />
+
+        <TextView
+            android:id="@+id/operation_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="运营监管"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/operation_manage"
+            app:layout_constraintBaseline_toBaselineOf="@id/service_notice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/additional_service" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

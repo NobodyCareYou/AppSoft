@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="soft.zhuhuo.com.LoginViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_login"
+        tools:context=".LoginActivity">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/signin_logo"
+            app:layout_constraintBottom_toBottomOf="@id/h1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?android:actionBarSize"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/setting"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.2"
+            android:text="@string/hello"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_constraintStart_toStartOf="@id/v1"
+            app:layout_constraintTop_toTopOf="@id/h2" />
+
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/v2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/v1"
+            app:layout_constraintTop_toBottomOf="@id/hello" />
+
+        <TextView
+            android:id="@+id/staff_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/staff_code"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/staff_code"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_staff_code"
+            app:layout_constraintStart_toStartOf="@id/v1" />
+
+        <EditText
+            android:id="@+id/et_staff_code"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:autofillHints=""
+            android:background="@null"
+            android:hint="@string/hint_staff_code"
+            android:text="@{viewModel.account}"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/v2"
+            app:layout_constraintStart_toEndOf="@id/staff_code"
+            app:layout_constraintTop_toBottomOf="@id/welcome" />
+
+        <androidx.constraintlayout.helper.widget.Layer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_et_login"
+            app:constraint_referenced_ids="staff_code,et_staff_code"
+            app:layout_constraintEnd_toEndOf="@id/v2"
+            app:layout_constraintStart_toStartOf="@id/v1"
+            app:layout_constraintTop_toBottomOf="@id/welcome" />
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/password"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/password"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_password"
+            app:layout_constraintStart_toStartOf="@id/v1" />
+
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:autofillHints=""
+            android:background="@null"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            android:text="@{viewModel.password}"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/v2"
+            app:layout_constraintStart_toEndOf="@id/staff_code"
+            app:layout_constraintTop_toBottomOf="@id/et_staff_code" />
+
+        <androidx.constraintlayout.helper.widget.Layer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_et_login"
+            app:constraint_referenced_ids="password,et_password"
+            app:layout_constraintEnd_toEndOf="@id/v2"
+            app:layout_constraintStart_toStartOf="@id/v1"
+            app:layout_constraintTop_toBottomOf="@id/et_staff_code" />
+
+        <CheckBox
+            android:id="@+id/cb_remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:button="@drawable/check_style"
+            android:checked="@{viewModel.isCheck}"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/remember"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@id/v2"
+            app:layout_constraintTop_toBottomOf="@id/et_password" />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bg_login_button"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textColor="#0C29CD"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/v2"
+            app:layout_constraintStart_toStartOf="@id/v1"
+            app:layout_constraintTop_toBottomOf="@id/cb_remember" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/company"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/v2"
+            app:layout_constraintStart_toStartOf="@id/v1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

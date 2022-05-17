@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="emptyDes">空页面布局</string>
+    <string name="cancelFirst">取消优先</string>
+    <string name="first">优先安排</string>
+    <string name="code">工号：%s</string>
+    <string name="less">缺</string>
+    <string name="union">联</string>
+    <string name="floor">楼层</string>
+    <string name="type">类型</string>
+    <string name="state">状态</string>
+</resources>

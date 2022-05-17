@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="soft.zhuhuo.lib.bean.TechnicianState" />
+
+        <variable
+            name="data"
+            type="soft.zhuhuo.lib.bean.ItemTechnician.DataDTO" />
+
+    </data>
+
+    <!--    android:background='@{data.isSelected ? @drawable/blue_conner: @drawable/grey_conner}'-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{data.isSelected ? @drawable/blue_conner : @drawable/grey_conner}"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.tecCode}"
+            android:textColor="@{data.isSelected ? @color/white: @color/black}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/state"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{TechnicianState.getName(data.stateID)}"
+            android:textColor="@{data.isSelected ? @color/subWhite: @color/subBlack}"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/code" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

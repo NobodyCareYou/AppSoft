@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="underLineTextStyle" >
+    <attr name="underLineHeight" format="dimension"/>
+    <attr name="underLineColor" format="color"/>
+    <attr name="underLineInsideWidth" format="dimension"/>
+</declare-styleable>
+
+
+</resources>

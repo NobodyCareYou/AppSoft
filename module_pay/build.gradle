@@ -1,0 +1,59 @@
+if (!isNeedPayModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 30
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+        if (!isNeedPayModule.toBoolean()) {
+            applicationId "soft.zhuhuo.module_pay"
+        }
+
+        sourceSets{
+            main {
+                if (!isNeedPayModule.toBoolean()) {
+                    manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+                } else {
+                    manifest.srcFile 'src/main/AndroidManifest.xml'
+                    java {
+                        //全部Module一起编译的时候剔除debug目录
+                        exclude '**/debug/**'
+                    }
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(path: ':lib')
+    annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
+}

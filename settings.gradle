@@ -1,0 +1,8 @@
+include ':module_achievement'
+include ':module_mine'
+include ':module_pay'
+include ':module_order'
+include ':module_home'
+include ':lib'
+include ':app'
+rootProject.name = "AppSoft"

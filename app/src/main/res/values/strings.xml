@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">烛火</string>
+    <string name="welcome">欢迎使用本产品，请使用员工编号登录</string>
+    <string name="hello">Hello</string>
+    <string name="remember">记住账号密码</string>
+    <string name="hint_password">请输入您的登录密码</string>
+    <string name="password">登录密码</string>
+    <string name="hint_staff_code">请输入您的员工编号</string>
+    <string name="staff_code">员工编号</string>
+    <string name="company">湖南烛火信息科技有限公司</string>
+    <string name="login">登录</string>
+    <string name="home_page">首页</string>
+    <string name="achievement">业绩</string>
+    <string name="mine">我的</string>
+    <string name="floor">楼层</string>
+    <string name="bed">床位</string>
+    <string name="default_des">contentDescription</string>
+    <string name="state">状态</string>
+    <string name="type">类型</string>
+    <string name="area">区域</string>
+    <string name="address">地址:</string>
+    <string name="confirm">确认</string>
+</resources>

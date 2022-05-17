@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.helper.widget.Layer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_white_conner8dp"
+            app:constraint_referenced_ids="work,circle,upclock,appointment,rest,updateItem,updateTechnician,addClock,advanceDownClock,cancelItem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/work"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/work_off"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="下班"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/circle"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/circle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/circle"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="圈牌"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/work"
+            app:layout_constraintEnd_toStartOf="@id/upclock"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/work"
+            app:layout_constraintTop_toTopOf="@id/work" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/upclock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/clock"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="上钟"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/work"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/circle"
+            app:layout_constraintTop_toTopOf="@id/work" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/appointment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/technician_appointment"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="预约"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/rest"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/work" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/rest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/technician_rest"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="休假"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/appointment"
+            app:layout_constraintEnd_toStartOf="@id/updateItem"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/appointment"
+            app:layout_constraintTop_toTopOf="@id/appointment" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/updateItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/update_item"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="换项目"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/rest"
+            app:layout_constraintTop_toTopOf="@id/appointment" />
+
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/updateTechnician"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/update_technician"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="换技师"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/addClock"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appointment" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/addClock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/technician_rest"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="加钟"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/updateTechnician"
+            app:layout_constraintEnd_toStartOf="@id/updateItem"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/updateTechnician"
+            app:layout_constraintTop_toTopOf="@id/updateTechnician" />
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/advanceDownClock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/update_item"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="提前下钟"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/updateTechnician"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/addClock"
+            app:layout_constraintTop_toTopOf="@id/updateTechnician" />
+
+
+        <soft.zhuhuo.lib.view.DrawableTextView
+            android:id="@+id/cancelItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/cancel_item"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:text="退单"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/addClock"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/updateTechnician" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cancelItem" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
