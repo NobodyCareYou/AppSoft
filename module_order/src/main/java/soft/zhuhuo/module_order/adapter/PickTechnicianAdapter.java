@@ -20,6 +20,7 @@ import soft.zhuhuo.module_order.databinding.ItemOrderTechnicianBinding;
 
 public class PickTechnicianAdapter extends RecyclerView.Adapter<PickTechnicianAdapter.TechnicianViewHolder> {
 
+    ///
     private Context mContext;
     private List<ItemTechnician.DataDTO> data;
 
